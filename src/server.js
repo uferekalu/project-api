@@ -5,6 +5,7 @@ const cors = require('cors') // includes cors module
 const bodyParser = require("body-parser");
 const projects = require("./routes/api/project");
 const about = require("./routes/api/about");
+const highlights = require("./routes/api/highlights");
 
 require('dotenv').config()
 
@@ -27,6 +28,7 @@ connectDB() //this function connects us to the DB!!!
 
 app.use("/api", projects);
 app.use("/api", about);
+app.use("/api", highlights);
 
 app.listen(process.env.PORT, () => {
     console.log(`The API is running on port ${process.env.PORT}`)
