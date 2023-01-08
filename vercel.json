@@ -1,15 +1,19 @@
 {
   "version": 2,
+  "name": "project-api",
   "builds": [
     {
-      "src": "./src/server.js",
+      "src": "/src/server.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/src/(.*)",
-      "dest": "/src"
+      "dest": "/src/server.js"
     }
-  ]
+  ],
+  "env": {
+    "DATABASE_URL": "mongodb+srv://lushak:INTELLIGENTprogrammer1234@cluster0.i4kwt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  }
 }
